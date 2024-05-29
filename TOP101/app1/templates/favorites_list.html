@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP101</title>
+    <link rel="stylesheet" href="{% static 'CSS/Register Style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c2376c1e70.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("{% static 'img/2014465.png' %}"); 
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            font-family: sans-serif;
+            margin: 0;
+        }
+        #logo {
+            font-family: "Freckle Face", system-ui;
+            color: #ffffff;
+            margin-left: 7%;
+            margin-top: 1%;
+            font-size: 50px;
+        }
+        form {
+            background: linear-gradient(135deg, rgba(4, 1, 177, 0.1), rgba(255, 255, 255, 0.1));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            text-align: center;
+            max-width: 300px;
+            margin-left: 39%;
+            padding-bottom: 50px;
+            border-radius: 10px;
+            border: #dbdbdb solid 1px;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1), 0 0 18px 3px rgba(0, 0, 0, 0.3);
+        }
+        #X {
+            font-weight: bold;
+            border: none;
+            color: #151384;
+            background-color: rgb(255, 255, 255);
+            padding-top: 7px;
+            padding-bottom: 6px;
+            padding-left: 9px;
+            padding-right: 9px;
+            margin-top: 7px;
+            margin-left: 260px;
+            border-radius: 0 7px 0 7px;
+        }
+        #X:hover, #Register:hover {
+            background-color: #090835;
+        }
+        button:hover {
+            cursor: pointer;
+        }
+        #email, #password2, #password, #name {
+            color: aliceblue;
+            width: 70%;
+            height: 20px;
+            background: none;
+            border-color: black;
+            border-style: double;
+            border-width: 0 0 1px 0;
+        }
+        ::placeholder {
+            opacity: 50%;
+            color: aliceblue;
+            padding-left: 15px;
+        }
+        h2 {
+            font-family: "Open Sans", Arial, Helvetica, sans-serif;
+            color: aliceblue;
+        }
+        #Register {
+            font-size: 14px;
+            font-weight: bold;
+            color: #151384;
+            background-color: rgb(237, 237, 237);
+            width: 200px;
+            height: 30px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: none;
+        }
+        #Register:active, #login1:active {
+            color: aliceblue;
+            text-decoration: underline;
+        }
+        #x:active {
+            background-color: #151384;
+        }
+        #lock2 {
+            position: fixed;
+            margin-left: 200px;
+            margin-top: 135px;
+        }
+        .fa-lock {
+            position: fixed;
+            margin-left: 200px;
+            margin-top: 93px;
+        }
+        .fa-envelope {
+            position: fixed;
+            margin-left: 199px;
+            margin-top: 50px;
+        }
+        .fa-user {
+            position: fixed;
+            margin-left: 199px;
+            margin-top: 11px;
+        }
+        #login1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            color: #151384;
+            background-color: rgb(243, 243, 243);
+            margin-left: 72%;
+            margin-top: 28px;
+            width: 110px;
+            height: 35px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        #login1:hover {
+            background-color: #0a0a38;
+            box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+        #Agree {
+            position: fixed;
+            accent-color: green;
+            margin-top: 3px;
+            margin-left: -17px;
+        }
+        #Agree:hover {
+            cursor: pointer;
+        }
+        #Iagree {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #dbdbdb;
+            font-size: 13px;
+        }
+        #MSG {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            color: #000000;
+            width: 150px;
+            margin: auto;
+            border-radius: 5px;
+            padding-top: 3px;
+            padding-bottom: 20px;
+        }
+        #Already {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #dbdbdb;
+            font-size: 12px;
+        }
+        #login2 {
+            color: #151384;
+            background: none;
+            border: none;
+        }
+        #login2:hover {
+            text-decoration: underline;
+        }
+        #login2:active {
+            color: aliceblue;
+            text-decoration: underline;
+        }
+        .favorite-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            text-align: center;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            border: #dbdbdb solid 1px;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1), 0 0 18px 3px rgba(0, 0, 0, 0.3);
+        }
+        .favorite-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .favorite-item button {
+            background-color: #151384;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+        .favorite-item button:hover {
+            background-color: #090835;
+        }
+    </style>
+</head>
+<body>
+    <p id="logo">TOP101
+    <a href="{% url 'signin' %}"><button id="login1">Login</button></a>
+    </p>
+    <div class="favorite-container">
+        <h2>Your Favorites</h2>
+        <ul>
+            {% if favorites %}
+            {% for favorite in favorites %}
+                <li class="favorite-item">
+                    {{ favorite.title }} ({{ favorite.type }})
+                    <form action="{% url 'remove_favorite' favorite.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Remove</button>
+                    </form>
+                </li>
+            {% endfor %}
+          {% else %}
+            <li>No favorites yet.</li>
+          {% endif %}
+        </ul>
+        <a href="{% url 'add_favorite' %}">Add Favorite</a>
+    </div>
+</body>
+</html>

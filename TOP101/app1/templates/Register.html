@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP101</title>
+    <link rel="stylesheet" href="{% static 'CSS/Register Style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c2376c1e70.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
+    <style>    
+    body {
+        background-image: url("{% static 'img/2014465.png' %}"); 
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        font-family: sans-serif;
+        margin: 0;
+        } 
+        #logo
+        {
+            font-family: "Freckle Face", system-ui;
+            color: #ffffff;
+            margin-left: 7%;
+            margin-top: 1%;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <p id="logo">TOP101
+    <a href="{% url 'signin' %}"><button id="login1">Login</button></a>
+    </p>
+    <form action="/register" method="post">
+    {% csrf_token %}
+        <button id="X">X</button>
+        <h2>Register</h2><br>
+        <p id="MSG"></p>
+        <i class="fa-solid fa-lock fa-xs"></i>
+        <i class="fa-solid fa-lock fa-xs" id="lock2"></i>
+        <i class="fa-solid fa-envelope fa-xs"></i>
+        <i class="fa-solid fa-user fa-xs"></i>
+        <input type="text" name="username" placeholder="Name" id="name" required><br><br>
+        <input type="email" name="Email" placeholder="Email" id="email" required><br><br>
+        <input type="password" name="pass1" placeholder="Password" id="password" required><br><br>
+        <input type="password" name="pass2" placeholder="Enter the password again" id="password2" required><br><br>
+        <input type="checkbox" id="Agree">
+        <label for="Agree" id="Iagree">I agree to sell my soul to you </label>
+        <br><br><br>
+        <button type="submit" id="Register">Register</button>
+        <p id="Already">Already have an account?<a id="login2" href="{% url 'signin' %}"> Login</a></p>
+    </form>
+
+    <!-- <script src="{% static 'js/Register script.js' %}"></script> -->
+</body>
+</html>

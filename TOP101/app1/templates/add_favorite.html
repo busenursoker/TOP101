@@ -1,0 +1,18 @@
+<!-- add_favorite.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Favorite</title>
+</head>
+<body>
+    <h1>Add a Favorite</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Favorite</button>
+    </form>
+    <a href="{% url 'favorites_list' %}">Back to Favorites</a>
+</body>
+</html>
